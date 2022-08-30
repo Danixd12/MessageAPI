@@ -59,9 +59,7 @@ class Msg {
 
             else -> {}
         }
-
         if(broadcast) {Bukkit.spigot().broadcast(e)}
-
         return e
     }
 
