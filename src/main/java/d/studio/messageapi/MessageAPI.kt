@@ -1,16 +1,17 @@
 package d.studio.messageapi
 
-import d.studio.messageapi.api.Msg
+import d.studio.messageapi.api.Msgapi
 import org.bukkit.plugin.java.JavaPlugin
-
 
 class MessageAPI : JavaPlugin() {
 
-    lateinit var api: Msg
-    lateinit var Instance: MessageAPI
+    lateinit var plugin: MessageAPI
+    lateinit var api: Msgapi
     override fun onEnable() {
-        Instance = this
-        api = Msg()
+
+        api = Msgapi()
+        plugin = this
+
     }
 
 }
