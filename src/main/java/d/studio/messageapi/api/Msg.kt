@@ -23,12 +23,24 @@ class Msgapi {
             return p.sendMessage(ChatColor.translateAlternateColorCodes('&', args))
         }
 
+        /**
+         * Crea un nuevo mensaje global
+         * * Importante agregar permisos
+         * @param args
+         * @param perms
+         */
         fun broadcast(args: String, perms: String): Int {
 
 
             return Bukkit.broadcast(args, perms)
         }
 
+        /**
+         * Crea un nuevo component, BaseComponent
+         * * BaseComponent
+         * @param args
+         * @return BaseComponent
+         */
         fun createComponent(args: String): BaseComponent {
 
             var bc: BaseComponent = TextComponent(args)
@@ -36,6 +48,12 @@ class Msgapi {
             return bc
         }
 
+        /**
+         * Crea un nuevo component, ComponentBuilder
+         * * ComponentBuilder
+         * @param args
+         * @return ComponentBuilder
+         */
         fun componentBuilder(args: Any): ComponentBuilder {
 
             return componentBuilder(args)
@@ -48,6 +66,8 @@ class Msgapi {
          * @param hoverText
          * @param Types
          * @param broadcast
+         *
+         * @return BaseComponent como HoverEvent
          */
         fun createHover(args: String, hoverText: Any, Types: Type, broadcast: Boolean): BaseComponent {
 
@@ -79,10 +99,27 @@ class Msgapi {
 
 }
 
+/**
+ * Tipo de component
+ *
+ * * TEXT, ACTION
+ *
+ * @return Action.TYPE
+ */
 enum class Type(val Type: Action) {
+    /**
+     * Tipo: Texto(Valor string)
+     *
+     * @return Action.SHOW_TEXT
+     */
     TEXT(Action.SHOW_TEXT),
-    ITEM(Action.SHOW_ITEM),
-    ENTITY(Action.SHOW_ENTITY);
+
+    /**
+     * Tipo: Item(Valor BaseComponent[])
+     *
+     * @return Action.SHOW_ITEM
+     */
+    ITEM(Action.SHOW_ITEM);
 
     fun Type(): Action {
         return this.Type
