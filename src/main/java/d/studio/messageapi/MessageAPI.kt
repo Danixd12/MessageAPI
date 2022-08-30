@@ -9,7 +9,7 @@ class MessageAPI : JavaPlugin() {
     lateinit var api: Msgapi
     override fun onEnable() {
 
-        api = Msgapi()
+        api = api
         plugin = this
 
     }
