@@ -6,10 +6,12 @@ import org.bukkit.plugin.java.JavaPlugin
 class MessageAPI : JavaPlugin() {
 
     lateinit var plugin: MessageAPI
-    lateinit var api: Msgapi
+    lateinit var MessageAPI: Msgapi
     override fun onEnable() {
 
-        api = api
+
+
+        MessageAPI = Msgapi()
         plugin = this
 
     }
