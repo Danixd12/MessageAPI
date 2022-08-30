@@ -1,0 +1,3 @@
+name: MessageAPI
+version: '${project.version}'
+main: d.studio.messageapi.MessageAPI
