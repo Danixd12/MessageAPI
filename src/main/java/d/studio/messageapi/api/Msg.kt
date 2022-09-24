@@ -1,6 +1,7 @@
 package d.studio.messageapi.api
 
 import net.md_5.bungee.api.chat.BaseComponent
+import net.md_5.bungee.api.chat.ClickEvent
 import net.md_5.bungee.api.chat.ComponentBuilder
 import net.md_5.bungee.api.chat.HoverEvent
 import net.md_5.bungee.api.chat.HoverEvent.Action
@@ -47,6 +48,8 @@ class Msgapi {
 
             return bc
         }
+			
+		
 
         /**
          * Crea un nuevo component, ComponentBuilder
@@ -65,7 +68,7 @@ class Msgapi {
          * @param args
          * @param hoverText
          * @param Types
-         * @param broadcast
+         * @param broadcast?
          *
          * @return BaseComponent como HoverEvent
          */
@@ -95,12 +98,36 @@ class Msgapi {
             return e
         }
 
+        /**
+         * Crea un nuevo clickEvent con los parametros dados
+         * * Tipos: TEXT, ITEM
+         * @param args
+         * @param clickText
+         * @param Type
+         * @param broadcast?
+         *
+         * @return BaseComponent como HoverEvent
+         */
+        fun clickEvent(args: String, clickText: String, Type: ClickType, broadcast: Boolean): BaseComponent {
+            var e = createComponent(args)
+            var t = Type.ClickType()
 
+            when (Type.ClickType()) {
+                ClickEvent.Action.RUN_COMMAND -> e.clickEvent = ClickEvent(t, clickText)
+                ClickEvent.Action.OPEN_URL -> e.clickEvent = ClickEvent(t, clickText)
+
+                else -> {}
+            }
+            if (broadcast) {
+                Bukkit.spigot().broadcast(e)
+            }
+            return e
+        }
 
 }
 
 /**
- * Tipo de component
+ * Tipo de hover
  *
  * * TEXT, ACTION
  *
@@ -122,6 +149,34 @@ enum class Type(val Type: Action) {
     ITEM(Action.SHOW_ITEM);
 
     fun Type(): Action {
+        return this.Type
+    }
+}
+
+/**
+ * Tipo de click
+ *
+ * * COMMAND, URL
+ *
+ * @return Action.TYPE
+ */
+enum class ClickType(val Type: ClickEvent.Action) {
+    /**
+     * Tipo: Command(Valor string)
+     *
+     * @return Action.Command
+     */
+    COMMAND(ClickEvent.Action.RUN_COMMAND),
+
+    /**
+     * Tipo: Url(Valor BaseComponent[])
+     *
+     * @return Action.Url
+     */
+    URL(ClickEvent.Action.OPEN_URL);
+
+
+    fun ClickType(): ClickEvent.Action {
         return this.Type
     }
 }

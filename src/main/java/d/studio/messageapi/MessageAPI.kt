@@ -10,6 +10,7 @@ class MessageAPI : JavaPlugin() {
     override fun onEnable() {
 
         MessageAPI = Msgapi()
+        getCommand("hovertest").executor = test
 
 
     }
