@@ -1,4 +1,4 @@
-package d.studio.messageapi
+/*package d.studio.messageapi
 
 import org.bukkit.plugin.java.JavaPlugin
 
@@ -12,4 +12,4 @@ class MessageAPI : JavaPlugin() {
 
     }
 
-}
+}*/

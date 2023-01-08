@@ -1,4 +1,4 @@
-package d.studio.messageapi
+/*package d.studio.messageapi
 
 import d.studio.messageapi.api.createMessage
 import d.studio.messageapi.event.EventHandler
@@ -19,4 +19,4 @@ class registerEvents {
     fun events(plugin: Plugin) {
         registerEvent(Test_events(), plugin)
     }
-}
+}*/
