@@ -1,4 +1,4 @@
-package d.studio.messageapi
+/*package d.studio.messageapi
 
 import d.studio.messageapi.api.Type
 import d.studio.messageapi.api.createHover
@@ -21,4 +21,4 @@ object test: CommandExecutor {
 
         return true;
     }
-}
+}*/
