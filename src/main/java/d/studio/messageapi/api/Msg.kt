@@ -10,7 +10,7 @@ import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.entity.Player
 
-class Msgapi {
+
 
 
         /**
@@ -33,7 +33,7 @@ class Msgapi {
         fun broadcast(args: String, perms: String): Int {
 
 
-            return Bukkit.broadcast(args, perms)
+            return Bukkit.broadcast(ChatColor.translateAlternateColorCodes('&', args), perms)
         }
 
         /**
@@ -124,7 +124,7 @@ class Msgapi {
             return e
         }
 
-}
+
 
 /**
  * Tipo de hover
