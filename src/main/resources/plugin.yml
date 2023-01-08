@@ -1,6 +1,6 @@
 name: MessageAPI
 version: '${project.version}'
-main: d.studio.messageapi.MessageAPI
+main: d.studio.messageapi.Messageapi
 commands:
   hovertest:
     description: "Test"
