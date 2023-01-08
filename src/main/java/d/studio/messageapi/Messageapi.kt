@@ -1,7 +1,6 @@
 package d.studio.messageapi
 
-import d.studio.messageapi.api.ClickType
-import d.studio.messageapi.api.Type
+
 import net.md_5.bungee.api.chat.*
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
