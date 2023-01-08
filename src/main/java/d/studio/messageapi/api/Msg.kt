@@ -10,7 +10,7 @@ import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.entity.Player
 
-interface EzMessages {
+public interface EzMessages {
 
     /**
      * Crea un nuevo mensaje
@@ -106,7 +106,7 @@ interface EzMessages {
      *
      * @return BaseComponent como HoverEvent
      */
-    fun clickEvent(args: String, clickText: String, Type: ClickType, broadcast: Boolean): BaseComponent {
+     fun clickEvent(args: String, clickText: String, Type: ClickType, broadcast: Boolean): BaseComponent {
         var e = createComponent(args)
         var t = Type.ClickType()
 
@@ -122,7 +122,7 @@ interface EzMessages {
         return e
     }
 
-}
+
     /**
      * Tipo de hover
      *
@@ -150,30 +150,31 @@ interface EzMessages {
         }
     }
 
-/**
- * Tipo de click
- *
- * * COMMAND, URL
- *
- * @return Action.TYPE
- */
-enum class ClickType(val Type: ClickEvent.Action) {
     /**
-     * Tipo: Command(Valor string)
+     * Tipo de click
      *
-     * @return Action.Command
-     */
-    COMMAND(ClickEvent.Action.RUN_COMMAND),
-
-    /**
-     * Tipo: Url(Valor BaseComponent[])
+     * * COMMAND, URL
      *
-     * @return Action.Url
+     * @return Action.TYPE
      */
-    URL(ClickEvent.Action.OPEN_URL);
+    enum class ClickType(val Type: ClickEvent.Action) {
+        /**
+         * Tipo: Command(Valor string)
+         *
+         * @return Action.Command
+         */
+        COMMAND(ClickEvent.Action.RUN_COMMAND),
+
+        /**
+         * Tipo: Url(Valor BaseComponent[])
+         *
+         * @return Action.Url
+         */
+        URL(ClickEvent.Action.OPEN_URL);
 
 
-    fun ClickType(): ClickEvent.Action {
-        return this.Type
+        fun ClickType(): ClickEvent.Action {
+            return this.Type
+        }
     }
 }
