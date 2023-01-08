@@ -11,7 +11,6 @@ import org.bukkit.ChatColor
 import org.bukkit.entity.Player
 
 
-interface Msg {
 
     /**
      * Crea un nuevo mensaje
@@ -150,7 +149,7 @@ interface Msg {
             return this.Type
         }
     }
-}
+
 /**
  * Tipo de click
  *
