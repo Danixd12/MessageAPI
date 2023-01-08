@@ -10,7 +10,7 @@ import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.entity.Player
 
-
+interface EzMessages {
 
     /**
      * Crea un nuevo mensaje
@@ -122,7 +122,7 @@ import org.bukkit.entity.Player
         return e
     }
 
-
+}
     /**
      * Tipo de hover
      *
